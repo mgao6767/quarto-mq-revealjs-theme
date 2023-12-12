@@ -1,0 +1,621 @@
+---
+title: "MQBS Presentation Template"
+subtitle: "A Macquarie University theme for Reveal.js"
+author: "Dr. Mingze Gao"
+institute: "Department of Applied Finance"
+date: "2023-12-12"
+format: 
+  mq-revealjs:
+    chalkboard: true
+    embed-resources: false
+    code-fold: true
+jupyter: python3
+---
+
+# Presentation Quick Start
+
+## Navigation
+
+### With keyboards
+
+Navigation is mostly done via keyboard shortcuts.
+
+- Use spacebar, or vim bindings `j`, `k`, `h`, `l`, for navigation between slides.
+- `m` to open menu bar for other presentation tools. 
+
+::: footer
+Learn more: [Navigation](https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu)
+:::
+
+## Overview and Zoom
+
+Press `o` to toggle overview mode.
+
+<br/>
+
+Hold down the `Alt` key (or `Option` on MacOS) and click on any element to zoom towards it---try it now on this slide.
+
+::: footer
+Learn more: [Overview Mode](https://quarto.org/docs/presentations/revealjs/presenting.html#overview-mode), [Slide Zoom](https://quarto.org/docs/presentations/revealjs/presenting.html#slide-zoom)
+:::
+
+## Speaker View
+
+Press `s` (or use the presentation menu) to open speaker view
+
+::: footer
+Learn more: [Speaker View](https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view)
+:::
+
+## Chalkboard
+
+### Free form drawing and slide annotations
+
+- Use the chalkboard button at the bottom left of the slide to toggle the chalkboard.
+- Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.
+
+<br/> 
+You can also press `b` to toggle the chalkboard or `c` to toggle the notes canvas.
+
+::: footer
+Learn more: [Chalkboard](https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard)
+:::
+
+
+# Authoring & Features
+
+## Headings and Frame Titles
+
+### Frame Subtitle
+
+Headings are used to define different sections in the Reveal.js slides:
+
+-   A level 1 heading (`# Section Title`) is used for section title.
+-   A level 2 heading (`## Title`) is used to indicate individual slides
+-   A level 3 heading (`### Subtitle`) is used for subtitle.
+
+## Preview Links
+
+Navigate to hyperlinks without disrupting the flow of your presentation.
+
+Use the `preview-links` option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:
+
+::: {style="text-align: center; margin-top: 1em"}
+[Matplotlib: Visualization with Python](https://matplotlib.org/){preview-link="true" style="text-align: center"}
+:::
+
+::: footer
+Learn more: [Preview Links](https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links)
+:::
+
+## Code Highlighting {auto-animate="true"}
+
+-   Over 20 syntax highlighting themes available
+-   Default theme optimized for accessibility
+
+```python
+# A simple function to compute the present value of a future cashflow at a given discount rate. 
+def pv(cashflow, discount_rate, periods):
+    return cashflow / (1 + discount_rate) ** periods 
+
+cashflow = 100
+discount_rate = 0.05
+periods = 2
+```
+
+::: footer
+Learn more: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting)
+:::
+
+## Code Animations {auto-animate="true"}
+
+-   Over 20 syntax highlighting themes available
+-   Default theme optimized for accessibility
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+# A simple function to compute the present value of a future cashflow at a given discount rate. 
+def pv(cashflow, discount_rate, periods):
+    return cashflow / (1 + discount_rate) ** periods 
+
+cashflow = 100
+discount_rate = 0.05
+periods = 2
+
+print(f"The present value of {cashflow} is {pv(cashflow, discount_rate, periods)}")
+```
+
+> Note that we can also execute the code block as well! More on this later.
+
+::: footer
+Learn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations)
+:::
+
+## Line Highlighting
+
+-   Highlight specific lines for emphasis
+-   Incrementally highlight additional lines
+
+``` {.python code-line-numbers="4-5|7|10"}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+::: footer
+Learn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#line-highlighting)
+:::
+
+## Executable Python Code
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+``` {python} 
+#| echo: true
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis using `numpy` and `matplotlib`"
+ 
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+:::
+
+::: {.column width="50%"}
+@fig-polar is generated by executing the Python code when compiling this presentation.
+:::
+
+:::
+
+
+::: footer
+Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code)
+:::
+
+## LaTeX Equations
+
+[MathJax](https://www.mathjax.org/) rendering of equations to HTML.
+
+Equation label and reference are supported too. For example, @eq-PV shows the calculation of present value $PV$. 
+
+
+$$
+PV=\frac{CF_t}{(1+r)^t}
+$${#eq-PV}
+
+This is done via:
+
+```tex
+\begin{equation}
+PV=\frac{CF_t}{(1+r)^t}
+\end{equation}{#eq-PV}
+```
+
+Referencing the equation is as simple as `@eq-PV`.[^mathrenderer]
+
+[^mathrenderer]: Sometimes with Chrome, we need to adjust the MathJax's math renderer for better display quality.
+
+::: footer
+Learn more: [LaTeX Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations)
+:::
+
+## Column Layout
+
+Arrange content into columns of varying widths:
+
+<br/>
+
+::: columns
+::: {.column width="35%"}
+#### Left Column
+
+Content in the left column.
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="62%"}
+#### Right Column
+
+Content in the right column.
+:::
+:::
+
+
+::: footer
+Learn more: [Multiple Columns](https://quarto.org/docs/presentations/revealjs/#multiple-columns)
+:::
+
+## Incremental Lists
+
+Lists can optionally be displayed incrementally:
+
+::: incremental
+-   First item
+-   Second item
+-   Third item
+:::
+
+. . .
+
+<br/> Insert pauses to make other types of content display incrementally.
+
+::: footer
+Learn more: [Incremental Lists](https://quarto.org/docs/presentations/revealjs/#incremental-lists)
+:::
+
+## Fragments
+
+Incremental text display and animation with fragments:
+
+<br/>
+
+::: {.fragment .fade-in}
+Fade in
+:::
+
+::: {.fragment .fade-up}
+Slide up while fading in
+:::
+
+::: {.fragment .fade-left}
+Slide left while fading in
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Fade in then semi out
+:::
+
+. . .
+
+::: {.fragment .strike}
+Strike
+:::
+
+::: {.fragment .highlight-red}
+Highlight red
+:::
+
+::: footer
+Learn more: [Fragments](https://quarto.org/docs/presentations/revealjs/advanced.html#fragments)
+:::
+
+# Animation and Transition
+
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Automatically animate matching elements across slides with Auto-Animate.
+
+<br/>
+
+::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #A6192E; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #373A36; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #D6D2C4; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+
+::: footer
+Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate)
+:::
+
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Automatically animate matching elements across slides with Auto-Animate.
+
+<br/>
+
+::: r-stack
+::: {data-id="box1" style="background: #A6192E; width: 350px; height: 350px; border-radius: 200px;"}
+:::
+
+::: {data-id="box2" style="background: #373A36; width: 250px; height: 250px; border-radius: 200px;"}
+:::
+
+::: {data-id="box3" style="background: #D6D2C4; width: 150px; height: 150px; border-radius: 200px;"}
+:::
+:::
+
+::: footer
+Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate)
+:::
+
+## Slide Transitions
+
+The next few slides will transition using the `slide` transition
+
+<br/>
+
+| Transition | Description                                                            |
+|------------|------------------------------------------------------------------------|
+| `none`     | No transition (default, switch instantly)                              |
+| `fade`     | Cross fade                                                             |
+| `slide`    | Slide horizontally                                                     |
+| `convex`   | Slide at a convex angle                                                |
+| `concave`  | Slide at a concave angle                                               |
+| `zoom`     | Scale the incoming slide so it grows in from the center of the screen. |
+
+::: footer
+Learn more: [Slide Transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+:::
+
+## Tabsets {.scrollable transition="slide"}
+
+::: panel-tabset
+### Plot
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+from matplotlib.patches import Ellipse
+import matplotlib.transforms as transforms
+
+def confidence_ellipse(x, y, ax, n_std=3.0, facecolor='none', **kwargs):
+    """
+    Create a plot of the covariance confidence ellipse of *x* and *y*.
+
+    Parameters
+    ----------
+    x, y : array-like, shape (n, )
+        Input data.
+
+    ax : matplotlib.axes.Axes
+        The axes object to draw the ellipse into.
+
+    n_std : float
+        The number of standard deviations to determine the ellipse's radiuses.
+
+    **kwargs
+        Forwarded to `~matplotlib.patches.Ellipse`
+
+    Returns
+    -------
+    matplotlib.patches.Ellipse
+    """
+    if x.size != y.size:
+        raise ValueError("x and y must be the same size")
+
+    cov = np.cov(x, y)
+    pearson = cov[0, 1]/np.sqrt(cov[0, 0] * cov[1, 1])
+    # Using a special case to obtain the eigenvalues of this
+    # two-dimensional dataset.
+    ell_radius_x = np.sqrt(1 + pearson)
+    ell_radius_y = np.sqrt(1 - pearson)
+    ellipse = Ellipse((0, 0), width=ell_radius_x * 2, height=ell_radius_y * 2,
+                      facecolor=facecolor, **kwargs)
+
+    # Calculating the standard deviation of x from
+    # the squareroot of the variance and multiplying
+    # with the given number of standard deviations.
+    scale_x = np.sqrt(cov[0, 0]) * n_std
+    mean_x = np.mean(x)
+
+    # calculating the standard deviation of y ...
+    scale_y = np.sqrt(cov[1, 1]) * n_std
+    mean_y = np.mean(y)
+
+    transf = transforms.Affine2D() \
+        .rotate_deg(45) \
+        .scale(scale_x, scale_y) \
+        .translate(mean_x, mean_y)
+
+    ellipse.set_transform(transf + ax.transData)
+    return ax.add_patch(ellipse)
+
+def get_correlated_dataset(n, dependency, mu, scale):
+    latent = np.random.randn(n, 2)
+    dependent = latent.dot(dependency)
+    scaled = dependent * scale
+    scaled_with_offset = scaled + mu
+    # return x and y of the new, correlated dataset
+    return scaled_with_offset[:, 0], scaled_with_offset[:, 1]
+
+np.random.seed(0)
+
+PARAMETERS = {
+    'Positive correlation': [[0.85, 0.35],
+                             [0.15, -0.65]],
+    'Negative correlation': [[0.9, -0.4],
+                             [0.1, -0.6]],
+    'Weak correlation': [[1, 0],
+                         [0, 1]],
+}
+
+mu = 2, 4
+scale = 3, 5
+
+fig, axs = plt.subplots(1, 3, figsize=(16, 9))
+for ax, (title, dependency) in zip(axs, PARAMETERS.items()):
+    x, y = get_correlated_dataset(800, dependency, mu, scale)
+    ax.scatter(x, y, s=0.5)
+
+    ax.axvline(c='grey', lw=1)
+    ax.axhline(c='grey', lw=1)
+
+    confidence_ellipse(x, y, ax, edgecolor='red')
+
+    ax.scatter(mu[0], mu[1], c='red', s=3)
+    ax.set_title(title)
+
+plt.show()
+```
+
+### Code
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+from matplotlib.patches import Ellipse
+import matplotlib.transforms as transforms
+
+def confidence_ellipse(x, y, ax, n_std=3.0, facecolor='none', **kwargs):
+    """
+    Create a plot of the covariance confidence ellipse of *x* and *y*.
+
+    Parameters
+    ----------
+    x, y : array-like, shape (n, )
+        Input data.
+
+    ax : matplotlib.axes.Axes
+        The axes object to draw the ellipse into.
+
+    n_std : float
+        The number of standard deviations to determine the ellipse's radiuses.
+
+    **kwargs
+        Forwarded to `~matplotlib.patches.Ellipse`
+
+    Returns
+    -------
+    matplotlib.patches.Ellipse
+    """
+    if x.size != y.size:
+        raise ValueError("x and y must be the same size")
+
+    cov = np.cov(x, y)
+    pearson = cov[0, 1]/np.sqrt(cov[0, 0] * cov[1, 1])
+    # Using a special case to obtain the eigenvalues of this
+    # two-dimensional dataset.
+    ell_radius_x = np.sqrt(1 + pearson)
+    ell_radius_y = np.sqrt(1 - pearson)
+    ellipse = Ellipse((0, 0), width=ell_radius_x * 2, height=ell_radius_y * 2,
+                      facecolor=facecolor, **kwargs)
+
+    # Calculating the standard deviation of x from
+    # the squareroot of the variance and multiplying
+    # with the given number of standard deviations.
+    scale_x = np.sqrt(cov[0, 0]) * n_std
+    mean_x = np.mean(x)
+
+    # calculating the standard deviation of y ...
+    scale_y = np.sqrt(cov[1, 1]) * n_std
+    mean_y = np.mean(y)
+
+    transf = transforms.Affine2D() \
+        .rotate_deg(45) \
+        .scale(scale_x, scale_y) \
+        .translate(mean_x, mean_y)
+
+    ellipse.set_transform(transf + ax.transData)
+    return ax.add_patch(ellipse)
+
+def get_correlated_dataset(n, dependency, mu, scale):
+    latent = np.random.randn(n, 2)
+    dependent = latent.dot(dependency)
+    scaled = dependent * scale
+    scaled_with_offset = scaled + mu
+    # return x and y of the new, correlated dataset
+    return scaled_with_offset[:, 0], scaled_with_offset[:, 1]
+
+np.random.seed(0)
+
+PARAMETERS = {
+    'Positive correlation': [[0.85, 0.35],
+                             [0.15, -0.65]],
+    'Negative correlation': [[0.9, -0.4],
+                             [0.1, -0.6]],
+    'Weak correlation': [[1, 0],
+                         [0, 1]],
+}
+
+mu = 2, 4
+scale = 3, 5
+
+fig, axs = plt.subplots(1, 3, figsize=(16, 9))
+for ax, (title, dependency) in zip(axs, PARAMETERS.items()):
+    x, y = get_correlated_dataset(800, dependency, mu, scale)
+    ax.scatter(x, y, s=0.5)
+
+    ax.axvline(c='grey', lw=1)
+    ax.axhline(c='grey', lw=1)
+
+    confidence_ellipse(x, y, ax, edgecolor='red')
+
+    ax.scatter(mu[0], mu[1], c='red', s=3)
+    ax.set_title(title)
+
+plt.show()
+```
+
+### Source
+
+The code is taken from [`matplotlib`](https://matplotlib.org/stable/gallery/index.html) examples.
+
+:::
+
+
+
+::: footer
+Learn more: [Tabsets](https://quarto.org/docs/presentations/revealjs/#tabsets)
+:::
+
+
+# Finally...
+
+
+## Thanks!
+
+:::: {.columns}
+
+::: {.column width='33%'}
+
+#### Mingze Gao
+- [adrian.gao@outlook.com](mailto:adrian.gao@outlook.com)
+
+- [@AdrianMingzeGao](http://twitter.com/AdrianMingzeGao)
+
+- [@mgao6767](http://github.com/mgao6767)
+
+- [mingze-gao.com](https://mingze-gao.com)
+
+:::
+
+
+::: {.column width='33%'}
+
+#### Thomas Fung
+- [thomas.fung.dr@gmail.com](mailto:thomas.fung.dr@gmail.com)
+
+- [@thomasfungdr](http://twitter.com/thomasfungdr)
+
+- [@thomas-fung](http://github.com/thomas-fung)
+
+:::
+
+::: {.column width='33%'}
+
+#### Connor Smith
+
+- [connor.smith@mq.edu.au](mailto:connor.smith@mq.edu.au)
+
+- [@ConnorSmith010](http://twitter.com/ConnorSmith010)
+
+- [@SmithConnor](https://github.com/SmithConnor)
+
+:::
+
+::::
