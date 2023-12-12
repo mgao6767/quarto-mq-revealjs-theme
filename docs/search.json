@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "mqbs-template.html#navigation",
+    "href": "mqbs-template.html#navigation",
+    "title": "MQBS Presentation Template",
+    "section": "Navigation",
+    "text": "Navigation\nWith keyboards\nNavigation is mostly done via keyboard shortcuts.\n\nUse spacebar, or vim bindings j, k, h, l, for navigation between slides.\nm to open menu bar for other presentation tools.\n\n\nLearn more: Navigation"
+  },
+  {
+    "objectID": "mqbs-template.html#overview-and-zoom",
+    "href": "mqbs-template.html#overview-and-zoom",
+    "title": "MQBS Presentation Template",
+    "section": "Overview and Zoom",
+    "text": "Overview and Zoom\nPress o to toggle overview mode.\n\nHold down the Alt key (or Option on MacOS) and click on any element to zoom towards it—try it now on this slide.\n\nLearn more: Overview Mode, Slide Zoom"
+  },
+  {
+    "objectID": "mqbs-template.html#speaker-view",
+    "href": "mqbs-template.html#speaker-view",
+    "title": "MQBS Presentation Template",
+    "section": "Speaker View",
+    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\nLearn more: Speaker View"
+  },
+  {
+    "objectID": "mqbs-template.html#chalkboard",
+    "href": "mqbs-template.html#chalkboard",
+    "title": "MQBS Presentation Template",
+    "section": "Chalkboard",
+    "text": "Chalkboard\nFree form drawing and slide annotations\n\nUse the chalkboard button at the bottom left of the slide to toggle the chalkboard.\nUse the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.\n\n You can also press b to toggle the chalkboard or c to toggle the notes canvas.\n\nLearn more: Chalkboard"
+  },
+  {
+    "objectID": "mqbs-template.html#headings-and-frame-titles",
+    "href": "mqbs-template.html#headings-and-frame-titles",
+    "title": "MQBS Presentation Template",
+    "section": "Headings and Frame Titles",
+    "text": "Headings and Frame Titles\nFrame Subtitle\nHeadings are used to define different sections in the Reveal.js slides:\n\nA level 1 heading (# Section Title) is used for section title.\nA level 2 heading (## Title) is used to indicate individual slides\nA level 3 heading (### Subtitle) is used for subtitle."
+  },
+  {
+    "objectID": "mqbs-template.html#preview-links",
+    "href": "mqbs-template.html#preview-links",
+    "title": "MQBS Presentation Template",
+    "section": "Preview Links",
+    "text": "Preview Links\nNavigate to hyperlinks without disrupting the flow of your presentation.\nUse the preview-links option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:\n\nMatplotlib: Visualization with Python\n\n\nLearn more: Preview Links"
+  },
+  {
+    "objectID": "mqbs-template.html#code-highlighting",
+    "href": "mqbs-template.html#code-highlighting",
+    "title": "MQBS Presentation Template",
+    "section": "Code Highlighting",
+    "text": "Code Highlighting\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# A simple function to compute the present value of a future cashflow at a given discount rate. \ndef pv(cashflow, discount_rate, periods):\n    return cashflow / (1 + discount_rate) ** periods \n\ncashflow = 100\ndiscount_rate = 0.05\nperiods = 2\n\nLearn more: Syntax Highlighting"
+  },
+  {
+    "objectID": "mqbs-template.html#code-animations",
+    "href": "mqbs-template.html#code-animations",
+    "title": "MQBS Presentation Template",
+    "section": "Code Animations",
+    "text": "Code Animations\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n\n# A simple function to compute the present value of a future cashflow at a given discount rate. \ndef pv(cashflow, discount_rate, periods):\n    return cashflow / (1 + discount_rate) ** periods \n\ncashflow = 100\ndiscount_rate = 0.05\nperiods = 2\n\nprint(f\"The present value of {cashflow} is {pv(cashflow, discount_rate, periods)}\")\n\nThe present value of 100 is 90.70294784580499\n\n\n\nNote that we can also execute the code block as well! More on this later.\n\n\nLearn more: Code Animations"
+  },
+  {
+    "objectID": "mqbs-template.html#line-highlighting",
+    "href": "mqbs-template.html#line-highlighting",
+    "title": "MQBS Presentation Template",
+    "section": "Line Highlighting",
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting"
+  },
+  {
+    "objectID": "mqbs-template.html#executable-python-code",
+    "href": "mqbs-template.html#executable-python-code",
+    "title": "MQBS Presentation Template",
+    "section": "Executable Python Code",
+    "text": "Executable Python Code\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\nFigure 1: A line plot on a polar axis using numpy and matplotlib\n\n\n\n\n\nFigure 1 is generated by executing the Python code when compiling this presentation.\n\n\n\nLearn more: Executable Code"
+  },
+  {
+    "objectID": "mqbs-template.html#latex-equations",
+    "href": "mqbs-template.html#latex-equations",
+    "title": "MQBS Presentation Template",
+    "section": "LaTeX Equations",
+    "text": "LaTeX Equations\nMathJax rendering of equations to HTML.\nEquation label and reference are supported too. For example, Equation 1 shows the calculation of present value \\(PV\\).\n\\[\nPV=\\frac{CF_t}{(1+r)^t}\n\\qquad(1)\\]\nThis is done via:\n\\begin{equation}\nPV=\\frac{CF_t}{(1+r)^t}\n\\end{equation}{#eq-PV}\nReferencing the equation is as simple as @eq-PV.1\n\nLearn more: LaTeX Equations\n\nSometimes with Chrome, we need to adjust the MathJax’s math renderer for better display quality."
+  },
+  {
+    "objectID": "mqbs-template.html#column-layout",
+    "href": "mqbs-template.html#column-layout",
+    "title": "MQBS Presentation Template",
+    "section": "Column Layout",
+    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\n\nLeft Column\nContent in the left column.\n\n\n\nRight Column\nContent in the right column.\n\n\n\nLearn more: Multiple Columns"
+  },
+  {
+    "objectID": "mqbs-template.html#incremental-lists",
+    "href": "mqbs-template.html#incremental-lists",
+    "title": "MQBS Presentation Template",
+    "section": "Incremental Lists",
+    "text": "Incremental Lists\nLists can optionally be displayed incrementally:\n\n\nFirst item\nSecond item\nThird item\n\n\n\n Insert pauses to make other types of content display incrementally.\n\nLearn more: Incremental Lists"
+  },
+  {
+    "objectID": "mqbs-template.html#fragments",
+    "href": "mqbs-template.html#fragments",
+    "title": "MQBS Presentation Template",
+    "section": "Fragments",
+    "text": "Fragments\nIncremental text display and animation with fragments:\n\n\nFade in\n\n\nSlide up while fading in\n\n\nSlide left while fading in\n\n\nFade in then semi out\n\n\n\nStrike\n\n\nHighlight red\n\n\nLearn more: Fragments"
+  },
+  {
+    "objectID": "mqbs-template.html#auto-animate",
+    "href": "mqbs-template.html#auto-animate",
+    "title": "MQBS Presentation Template",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "mqbs-template.html#auto-animate-1",
+    "href": "mqbs-template.html#auto-animate-1",
+    "title": "MQBS Presentation Template",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "mqbs-template.html#slide-transitions",
+    "href": "mqbs-template.html#slide-transitions",
+    "title": "MQBS Presentation Template",
+    "section": "Slide Transitions",
+    "text": "Slide Transitions\nThe next few slides will transition using the slide transition\n\n\n\n\n\n\n\n\nTransition\nDescription\n\n\n\n\nnone\nNo transition (default, switch instantly)\n\n\nfade\nCross fade\n\n\nslide\nSlide horizontally\n\n\nconvex\nSlide at a convex angle\n\n\nconcave\nSlide at a concave angle\n\n\nzoom\nScale the incoming slide so it grows in from the center of the screen.\n\n\n\n\nLearn more: Slide Transitions"
+  },
+  {
+    "objectID": "mqbs-template.html#tabsets",
+    "href": "mqbs-template.html#tabsets",
+    "title": "MQBS Presentation Template",
+    "section": "Tabsets",
+    "text": "Tabsets\n\nPlotCodeSource\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nfrom matplotlib.patches import Ellipse\nimport matplotlib.transforms as transforms\n\ndef confidence_ellipse(x, y, ax, n_std=3.0, facecolor='none', **kwargs):\n    \"\"\"\n    Create a plot of the covariance confidence ellipse of *x* and *y*.\n\n    Parameters\n    ----------\n    x, y : array-like, shape (n, )\n        Input data.\n\n    ax : matplotlib.axes.Axes\n        The axes object to draw the ellipse into.\n\n    n_std : float\n        The number of standard deviations to determine the ellipse's radiuses.\n\n    **kwargs\n        Forwarded to `~matplotlib.patches.Ellipse`\n\n    Returns\n    -------\n    matplotlib.patches.Ellipse\n    \"\"\"\n    if x.size != y.size:\n        raise ValueError(\"x and y must be the same size\")\n\n    cov = np.cov(x, y)\n    pearson = cov[0, 1]/np.sqrt(cov[0, 0] * cov[1, 1])\n    # Using a special case to obtain the eigenvalues of this\n    # two-dimensional dataset.\n    ell_radius_x = np.sqrt(1 + pearson)\n    ell_radius_y = np.sqrt(1 - pearson)\n    ellipse = Ellipse((0, 0), width=ell_radius_x * 2, height=ell_radius_y * 2,\n                      facecolor=facecolor, **kwargs)\n\n    # Calculating the standard deviation of x from\n    # the squareroot of the variance and multiplying\n    # with the given number of standard deviations.\n    scale_x = np.sqrt(cov[0, 0]) * n_std\n    mean_x = np.mean(x)\n\n    # calculating the standard deviation of y ...\n    scale_y = np.sqrt(cov[1, 1]) * n_std\n    mean_y = np.mean(y)\n\n    transf = transforms.Affine2D() \\\n        .rotate_deg(45) \\\n        .scale(scale_x, scale_y) \\\n        .translate(mean_x, mean_y)\n\n    ellipse.set_transform(transf + ax.transData)\n    return ax.add_patch(ellipse)\n\ndef get_correlated_dataset(n, dependency, mu, scale):\n    latent = np.random.randn(n, 2)\n    dependent = latent.dot(dependency)\n    scaled = dependent * scale\n    scaled_with_offset = scaled + mu\n    # return x and y of the new, correlated dataset\n    return scaled_with_offset[:, 0], scaled_with_offset[:, 1]\n\nnp.random.seed(0)\n\nPARAMETERS = {\n    'Positive correlation': [[0.85, 0.35],\n                             [0.15, -0.65]],\n    'Negative correlation': [[0.9, -0.4],\n                             [0.1, -0.6]],\n    'Weak correlation': [[1, 0],\n                         [0, 1]],\n}\n\nmu = 2, 4\nscale = 3, 5\n\nfig, axs = plt.subplots(1, 3, figsize=(16, 9))\nfor ax, (title, dependency) in zip(axs, PARAMETERS.items()):\n    x, y = get_correlated_dataset(800, dependency, mu, scale)\n    ax.scatter(x, y, s=0.5)\n\n    ax.axvline(c='grey', lw=1)\n    ax.axhline(c='grey', lw=1)\n\n    confidence_ellipse(x, y, ax, edgecolor='red')\n\n    ax.scatter(mu[0], mu[1], c='red', s=3)\n    ax.set_title(title)\n\nplt.show()\n\n\nThe code is taken from matplotlib examples.\n\n\n\n\nLearn more: Tabsets"
+  },
+  {
+    "objectID": "mqbs-template.html#thanks",
+    "href": "mqbs-template.html#thanks",
+    "title": "MQBS Presentation Template",
+    "section": "Thanks!",
+    "text": "Thanks!\n\n\nMingze Gao\n\nadrian.gao@outlook.com\n@AdrianMingzeGao\n@mgao6767\nmingze-gao.com\n\n\nThomas Fung\n\nthomas.fung.dr@gmail.com\n@thomasfungdr\n@thomas-fung\n\n\nConnor Smith\n\nconnor.smith@mq.edu.au\n@ConnorSmith010\n@SmithConnor"
+  }
+]
