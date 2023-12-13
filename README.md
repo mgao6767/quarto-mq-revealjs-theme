@@ -10,6 +10,9 @@ This is a Quarto template that assists you in creating a presentation
 for use with Macquarie University branding. You can learn more about
 about Quarto using the official guide <https://quarto.org/docs/guide/>.
 
+> [!NOTE]
+> Check out the [online demo](https://mgao6767.github.io/quarto-mq-revealjs-theme/).
+
 ## Creating a New Presentation
 
 You can use this as a template to create a reveal.js presentation with a
@@ -17,7 +20,7 @@ Macquarie University theme. To do this, use the following command in
 your Terminal:
 
 ``` bash
-quarto use template thomas-fung/quarto-mq-revealjs-theme
+quarto use template mgao6767/quarto-mq-revealjs-theme
 ```
 
 This will install the extension and create an example qmd file that you
@@ -30,7 +33,7 @@ presentation. From the quarto project or presentation directory, run the
 following command in your Terminal to install this format:
 
 ``` bash
-quarto install extension thomas-fung/quarto-mq-revealjs-theme
+quarto install extension mgao6767/quarto-mq-revealjs-theme
 ```
 
 ## Usage
