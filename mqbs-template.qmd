@@ -4,6 +4,7 @@ subtitle: "A Macquarie University theme for Reveal.js"
 author: "Dr. Mingze Gao"
 institute: "Department of Applied Finance"
 date: "2023-12-12"
+date-modified: "2024-07-03"
 format: 
   mq-revealjs:
     chalkboard: true
@@ -584,7 +585,7 @@ Learn more: [Tabsets](https://quarto.org/docs/presentations/revealjs/#tabsets)
 ::: {.column width='33%'}
 
 #### Mingze Gao
-- [adrian.gao@outlook.com](mailto:adrian.gao@outlook.com)
+- [mingze.gao@mq.edu.au](mailto:mingze.gao@mq.edu.au)
 
 - [@AdrianMingzeGao](http://twitter.com/AdrianMingzeGao)
 
